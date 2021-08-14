@@ -1,35 +1,7 @@
-class Cat
-  attr_reader :name, :age
+require "./animal"
 
-  def initialize
-
-  end
-
-  def name=(name)
-    if name.empty?
-      raise "Name can't be blank"
-    end
-
-    @name = name
-  end
-
-  def age=(age)
-    if age < 0
-      raise "Age can't be negative"
-    end
-
-    @age = age
-  end
-
-  def report_age
-    puts "#{@name} is #{@age} years old."
-  end
-
+class Cat < Animal
   def talk
     puts "#{@name} says Meow!"
-  end
-
-  def move(destination)
-    puts "#{@name} runs to #{destination}."
   end
 end

@@ -1,36 +1,9 @@
-class Dog
-  attr_reader :name, :age
+require "./animal"
 
-  def initialize
-
-  end
-
-  def name=(name)
-    if name.empty?
-      raise "Name can't be blank"
-    end
-
-    @name = name
-  end
-
-  def age=(age)
-    if age < 0
-      raise "Age can't be negative"
-    end
-
-    @age = age
-  end
-
-
-  def report_age
-    puts "#{@name} is #{@age} years old."
-  end
-
-  def talk
-    puts "#{@name} says Bark!"
-  end
-
-  def move(destination)
-    puts "#{@name} runs to #{destination}."
+class Dog < Animal
+  # This method is overridden from Ruby's Object class
+  # Object class is the super class of all the objects in Ruby
+  def to_s
+    puts "#{@name} the dog, age #{@age}"
   end
 end
