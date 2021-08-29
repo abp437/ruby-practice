@@ -1,5 +1,5 @@
 class Employee
-  attr_reader :name, :salary
+  attr_reader :name
 
   def name=(name)
     if name == ""
@@ -9,37 +9,28 @@ class Employee
     @name = name
   end
 
-  def salary=(salary)
-    if salary < 0
-      raise "Salary can't be negative"
-    end
-
-    @salary = salary.to_f
-  end
-
-  def initialize(name = "Unnamed", salary = 0)
+  def initialize(name = "Unnamed")
     # These aren't local variable assignments, these are actually a call to the
     # attribute writer methods, which have validations defined in them.
     self.name = name
-    self.salary = salary
   end
 
-  def print_pay_stub
-    # Here we prefer not to access the instance variables directly, so we rely on attribute readers
-    # to get the values of the instance variables.
-    # In attribute readers we don't have ti use the 'self' keyword, however for attribute writers we have to use the 'self' keyword
+  def print_name
     puts "Name: #{name}"
-    # 'salary' is also a call to attribute reader
-    pay_for_period = ((salary / 365) * 14).round(2)
-    puts "Pay for this period: $#{pay_for_period}"
   end
-
 end
 
-amy = Employee.new
-amy.name = "Amy Lee"
-amy.salary = 500000
-amy.print_pay_stub
+=begin
 
-anon = Employee.new
-anon.print_pay_stub
+Some useful class and instance methods:
+
+Instance:
+amy.class.ancestors
+amy.instance_variables
+
+Class:
+Employee.instance_methods
+Employee.public_methods
+Employee.private_methods
+
+=end
