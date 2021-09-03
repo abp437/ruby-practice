@@ -1,0 +1,41 @@
+akshay-pawar@akshaypawar-OptiPlex-5050:~$ irb
+2.7.0 :001 > a = []
+2.7.0 :002 > a[4] = 20
+2.7.0 :003 > a
+ => [nil, nil, nil, nil, 20]
+2.7.0 :004 > a[10] = "Bow, Wow"
+2.7.0 :005 > a
+ => [nil, nil, nil, nil, 20, nil, nil, nil, nil, nil, "Bow, Wow"]
+2.7.0 :006 > a[20]
+ => nil
+2.7.0 :007 > a
+ => [nil, nil, nil, nil, 20, nil, nil, nil, nil, nil, "Bow, Wow"]
+2.7.0 :008 > a[0]
+ => nil
+2.7.0 :009 > a[4]
+ => 20
+2.7.0 :010 > a << "Herr Stalin" # => Appends to the array
+ => [nil, nil, nil, nil, 20, nil, nil, nil, nil, nil, "Bow, Wow", "Herr Stalin"]
+2.7.0 :011 > a
+ => [nil, nil, nil, nil, 20, nil, nil, nil, nil, nil, "Bow, Wow", "Herr Stalin"]
+2.7.0 :012 > a.join()
+ => "20Bow, WowHerr Stalin"
+2.7.0 :013 > a.join("-")
+ => "----20------Bow, Wow-Herr Stalin"
+2.7.0 :014 > a.shift # => Removes first element from the array
+ => nil
+2.7.0 :015 > a
+ => [nil, nil, nil, 20, nil, nil, nil, nil, nil, "Bow, Wow", "Herr Stalin"]
+2.7.0 :016 > a.pop # => Removes last element from the array
+ => "Herr Stalin"
+2.7.0 :017 > a
+ => [nil, nil, nil, 20, nil, nil, nil, nil, nil, "Bow, Wow"]
+2.7.0 :018 > a.last # => Gets the last element from the array
+ => "Bow, wow"
+2.7.0 :019 > a.last.capitalize
+ => "Bow, wow"
+2.7.0 :020 > a.last.upcase
+ => "BOW, WOW"
+2.7.0 :021 > a
+ => [nil, nil, nil, 20, nil, nil, nil, nil, nil, "Bow, Wow"]
+2.7.0 :022 >
